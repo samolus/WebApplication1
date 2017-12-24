@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Models.compagny
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+    <p>
+        @Model.adress
+        @Model.id
+        @Model.name
+
+
+
+        @foreach(var Contact in Model.contacts)
+        {
+           <div> @Contact.name</div>
+           <div>@Contact.number</div> 
+           <div>@Contact.id</div> 
+        }
+    </p>
+    <p>
+        <a href="\Compagny/update/@Model.id">Modify Compagny ?</a>
+    </p>
+
+

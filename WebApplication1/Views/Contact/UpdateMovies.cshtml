@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Models.Movies
+@{
+    ViewBag.Title = "UpdateMovies";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+    <link href="projet.css" rel="stylesheet" type="text/css" media="all" />
+    <h1 style="color:white; text-align:center">Update Movie</h1>
+    <h2 style="text-align:center; color:white">
+        @using (Html.BeginForm("UpdateMovie", "Contact", FormMethod.Post, new { encType = "multipart/form-data" }))
+        {
+            <p><input type="hidden" value="@Model.id" name="Id" /></p>
+            <p>Name <input class="entreText" value="@Model.Name" type="text" name="Name" /></p>
+            <p>Date (YEAR)<input class="entreText" value="@Model.Date" type="text" name="Date" /></p>
+            <p>Categories <input class="entreText" value="@Model.Categories" type="text" name="Categories" /></p>
+            <p>Resume <input class="entreText" value="@Model.Resume" type="text" name="Resume" /></p>
+            <p>Actors <input class="entreText" value="@Model.Actors" type="text" name="Actors" /></p>
+            <p>Nationality <input class="entreText" value="@Model.Nationality" type="text" name="Nationality" /></p>
+            <p>Director <input class="entreText" value="@Model.Director" type="text" name="Director" /></p>
+            
+            <input class="btn" type="submit" value="Update" />
+        }
+    </h2>
+</body>
+</html>

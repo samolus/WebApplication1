@@ -1,0 +1,33 @@
+﻿@model WebApplication1.Models.Movies
+@{
+    ViewBag.Title = "CreateContact";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   
+</head>
+<body style="text-align:center">
+    <link href="projetfin.css" rel="stylesheet" type="text/css" media="all" />
+    <h1 style="color:white">Add Movie</h1>
+        <h2 style="text-align:center; color:white">            
+            @using (Html.BeginForm("createMovies", "Contact", FormMethod.Post, new { encType = "multipart/form-data" }))
+            {
+                <p>Name <input class="entreText" type="text" name="Name" /></p>
+                <p>Date (YEAR)<input class="entreText" type="text" name="Date" /></p>
+                <p>Categories <input class="entreText" type="text" name="Categories" /></p>
+                <p>Resume <input class="entreText" type="text" name="Resume" /></p>
+                <p>Actors <input class="entreText" type="text" name="Actors" /></p>
+                <p>Nationality <input class="entreText" type="text" name="Nationality" /></p>
+                <p>Director <input class="entreText" type="text" name="Director" /></p> 
+                <p>Your name <input class="entreText" type="text" name="Login" /></p>          
+
+                @Html.TextBoxFor(m => m.Files, new { type = "file", name = "Files" })<br /><br />
+                <input type="submit" value="Add" name="submitme" id="submitme" />
+            }
+        </h2>
+</body>
+</html>
+
+

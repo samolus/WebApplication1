@@ -1,0 +1,63 @@
+﻿
+
+@model IEnumerable<WebApplication1.Models.Movies>
+@{
+    ViewBag.Title = "IndexContact";
+}
+<body>
+    <link href="projetfin.css" rel="stylesheet" type="text/css" media="all" />
+    <h2>Details of the Movie</h2>
+    <table>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    
+                    @{
+                    if (item.Image != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.Image);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        <img src="@imgSrc" />
+                    }
+                }
+                    
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Categories
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td>
+                    @item.Nationality
+                </td>
+                <td>
+                    @item.Director
+                </td>
+                <td>
+                    @item.Actors
+                </td>
+                <td>
+                    @*<a href="\Contact/DetailsContact/@item.id" rel="stylesheet" media="all">Details </a>*@
+                    <form action="\Contact/DeleteMovies/@item.id" method="post">
+                        <input class="btn" type="submit" value="Delete " name="Delete" />
+                    </form>
+                </td>
+                <td>
+                    <p>
+                        <a href="\Contact/updateContact/@item.id">Modify Contact ?</a>
+                    </p>
+                </td>
+            </tr>
+
+                        }
+    </table>
+
+</body>
+
+
